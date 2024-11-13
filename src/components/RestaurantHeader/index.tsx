@@ -1,20 +1,18 @@
-import { HeaderBar, HeroContainer, Logo } from './styles'
+import { HeaderBar, HeaderContainer, Logo } from './styles'
 import { colors, Container } from '../../styles'
 
 import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
 
-// style={{ textDecoration: 'none' }}
-
 const Header = () => (
-  <HeroContainer>
+  <HeaderContainer>
     <Container>
       <HeaderBar>
         <Link
           style={{
-            textDecoration: 'none',
             fontSize: '18px',
             fontWeight: '900',
+            textDecoration: 'none',
             color: `${colors.pink3}`
           }}
           to="/"
@@ -27,7 +25,7 @@ const Header = () => (
         </b>
       </HeaderBar>
     </Container>
-  </HeroContainer>
+  </HeaderContainer>
 )
 
 export default Header

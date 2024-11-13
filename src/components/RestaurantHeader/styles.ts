@@ -4,7 +4,7 @@ import { colors, Container } from '../../styles'
 
 import vector from '../../assets/images/vector.png'
 
-export const HeroContainer = styled.header`
+export const HeaderContainer = styled.header`
   padding: 40px 0 64px;
   background-image: url(${vector});
 

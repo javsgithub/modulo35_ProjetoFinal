@@ -1,18 +1,38 @@
 import { Dishes, Modal } from './styles'
 import Dish from '../Dish'
 
-// import Product from '../Product'
 import { Container } from '../../styles'
 
-// import pizza from '../../assets/images/pizza.png'
-// import { title } from 'process'
 import Item from '../../models/Item'
+import Product from '../Product'
+
+import { useState } from 'react'
 
 type Props = {
   dishes: Item[]
 }
 
 const DishList = ({ dishes }: Props) => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [product, setProduct] = useState<Item>({
+    image: '',
+    title: '',
+    description: '',
+    id: 0
+  })
+
+  const handleModal = () => {
+    isVisible === false ? setIsVisible(true) : setIsVisible(false)
+  }
+
+  const selectProduct = (item: Item) =>
+    setProduct({
+      image: item.image,
+      title: item.title,
+      description: item.description,
+      id: item.id
+    })
+
   return (
     <>
       <Dishes>
@@ -22,17 +42,23 @@ const DishList = ({ dishes }: Props) => {
             image={dish.image}
             title={dish.title}
             description={dish.description}
+            handleModal={handleModal}
+            selectProduct={selectProduct}
+            dish={dish}
           />
         ))}
       </Dishes>
-      <Modal>
+      <Modal
+        className={isVisible ? 'visible' : ''}
+        onClick={() => setIsVisible(false)}
+      >
         <Container>
-          {/* <Product
-            id={1}
-            image={pizza}
-            title={title}
-            description={'Ainda testando funcionalidade'}
-          /> */}
+          <Product
+            handleModal={handleModal}
+            image={product.image}
+            title={product.title}
+            description={product.description}
+          />
         </Container>
         <div className="overlay"></div>
       </Modal>

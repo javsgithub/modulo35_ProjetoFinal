@@ -1,8 +1,7 @@
 import { Container } from '../../styles'
 import Item from '../../models/Item'
 
-import sushi from '../../assets/images/sushi.png'
-import massa from '../../assets/images/massa.png'
+import pizza from '../../assets/images/pizza.png'
 import DishList from '../../components/DishList'
 import Header from '../../components/RestaurantHeader'
 import Banner from '../../components/Banner'
@@ -11,57 +10,45 @@ import Footer from '../../components/Footer'
 const dishes: Item[] = [
   {
     id: 1,
-    image: sushi,
-    title: 'Hioki Sushi',
-    rate: 4.9,
+    image: pizza,
+    title: 'Pizza Marguerita',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida!',
-    infoTags: ['Destaque da Semana', 'Japonesa']
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
   },
   {
     id: 2,
-    image: massa,
-    title: 'La Dolce Vita Trattoria',
-    rate: 4.6,
+    image: pizza,
+    title: 'Pizza Marguerita',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infoTags: ['Italiana']
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
   },
   {
     id: 3,
-    image: massa,
-    title: 'La Dolce Vita Trattoria',
-    rate: 4.6,
+    image: pizza,
+    title: 'Pizza Marguerita',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infoTags: ['Italiana']
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
   },
   {
     id: 4,
-    image: massa,
-    title: 'La Dolce Vita Trattoria',
-    rate: 4.6,
+    image: pizza,
+    title: 'Pizza Marguerita',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infoTags: ['Italiana']
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
   },
   {
     id: 5,
-    image: massa,
-    title: 'La Dolce Vita Trattoria',
-    rate: 4.6,
+    image: pizza,
+    title: 'Pizza Marguerita',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infoTags: ['Italiana']
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
   },
   {
     id: 6,
-    image: massa,
-    title: 'La Dolce Vita Trattoria',
-    rate: 4.6,
+    image: pizza,
+    title: 'Pizza Marguerita',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infoTags: ['Italiana']
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
   }
 ]
 

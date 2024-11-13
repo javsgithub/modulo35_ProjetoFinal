@@ -20,6 +20,7 @@ export const RestaurantContainer = styled.li`
     background-color: ${colors.white};
     color: ${colors.pink3};
     border: 1px solid ${colors.pink3};
+    border-top: 0;
 
     .title-rate {
       display: flex;
@@ -62,5 +63,4 @@ export const InfoTags = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
-  padding: 6px 4px;
 `
