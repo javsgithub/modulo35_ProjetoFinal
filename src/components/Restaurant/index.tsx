@@ -1,51 +1,72 @@
 import Button from '../Button'
 import Tag from '../Tag'
 import * as S from './styles'
+import { Place } from '../../pages/Home'
 
 import estrela from '../../assets/images/estrela.png'
 
-export type RestaurantProps = {
-  image: string
-  title: string
-  rate: number
-  description: string
-  infoTags: string[]
-}
-
 const Restaurant = ({
-  image,
-  title,
-  rate,
-  description,
-  infoTags
-}: RestaurantProps) => (
-  <S.RestaurantContainer>
-    <img src={image} alt={title} />
-    <S.InfoTags>
-      {infoTags.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
-    </S.InfoTags>
-    <div className="info">
-      <div className="title-rate">
-        <S.Title>{title}</S.Title>
-        <S.RateContainer>
-          <span>{rate}</span>
-          <img src={estrela} alt="estrela" />
-        </S.RateContainer>
+  id,
+  capa,
+  titulo,
+  avaliacao,
+  descricao,
+  destacado,
+  tipo
+}: Place) => {
+  const returnPath = () => {
+    if (id === 1) {
+      return '/Bella_Tavola_Italiana'
+    } else if (id === 2) {
+      return '/Casa_das_Delícias_Árabe'
+    } else if (id === 3) {
+      return '/Sakura_Sushi_House'
+    } else if (id === 4) {
+      return '/Cantinho_Lusitano'
+    } else if (id === 5) {
+      return '/Piazza_del_Fornot'
+    } else {
+      return '/Jardim_da_Terra'
+    }
+  }
+
+  const textLimit = () =>
+    descricao.length > 248 ? `${descricao.slice(0, 248) + '...'}` : descricao
+
+  return (
+    <S.RestaurantContainer>
+      <img src={capa} alt={titulo} />
+      <S.InfoTags>
+        {destacado === true ? (
+          <>
+            <Tag>Destaque da semana</Tag>
+            <Tag>{tipo}</Tag>
+          </>
+        ) : (
+          <Tag>{tipo}</Tag>
+        )}
+      </S.InfoTags>
+      <div className="info">
+        <div className="title-rate">
+          <S.Title>{titulo}</S.Title>
+          <S.RateContainer>
+            <span>{avaliacao}</span>
+            <img src={estrela} alt="estrela" />
+          </S.RateContainer>
+        </div>
+        <S.Description>{textLimit()}</S.Description>
+        <Button
+          type="link"
+          to={returnPath()}
+          title="Clique para ver as opções deste restaurante"
+          width="82px"
+          size="small"
+        >
+          Saiba mais
+        </Button>
       </div>
-      <S.Description>{description}</S.Description>
-      <Button
-        type="link"
-        to="/first-restaurant"
-        title="Clique para ver as opções deste restaurante"
-        width="82px"
-        size="small"
-      >
-        Saiba mais
-      </Button>
-    </div>
-  </S.RestaurantContainer>
-)
+    </S.RestaurantContainer>
+  )
+}
 
 export default Restaurant

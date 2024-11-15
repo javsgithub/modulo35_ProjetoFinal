@@ -7,11 +7,11 @@ import Banner from '../../components/Banner'
 import Footer from '../../components/Footer'
 import { useEffect, useState } from 'react'
 
-const FirstRestaurant = () => {
+const FourthRestaurant = () => {
   const [dishes, setDishes] = useState<Item[]>([])
 
   useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/Bella Tavola Italiana')
+    fetch('https://fake-api-tau.vercel.app/api/efood/first-restaurant')
       .then((res) => res.json())
       .then((res) => setDishes(res))
   }, [])
@@ -28,4 +28,4 @@ const FirstRestaurant = () => {
   )
 }
 
-export default FirstRestaurant
+export default FourthRestaurant

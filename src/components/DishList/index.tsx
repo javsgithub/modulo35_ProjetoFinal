@@ -3,7 +3,7 @@ import Dish from '../Dish'
 
 import { Container } from '../../styles'
 
-import Item from '../../models/Item'
+import { Item } from '../Dish'
 import Product from '../Product'
 
 import { useState } from 'react'
@@ -15,9 +15,9 @@ type Props = {
 const DishList = ({ dishes }: Props) => {
   const [isVisible, setIsVisible] = useState(false)
   const [product, setProduct] = useState<Item>({
-    image: '',
-    title: '',
-    description: '',
+    foto: '',
+    nome: '',
+    descricao: '',
     id: 0
   })
 
@@ -27,9 +27,9 @@ const DishList = ({ dishes }: Props) => {
 
   const selectProduct = (item: Item) =>
     setProduct({
-      image: item.image,
-      title: item.title,
-      description: item.description,
+      foto: item.foto,
+      nome: item.nome,
+      descricao: item.descricao,
       id: item.id
     })
 
@@ -39,9 +39,6 @@ const DishList = ({ dishes }: Props) => {
         {dishes.map((dish) => (
           <Dish
             key={dish.id}
-            image={dish.image}
-            title={dish.title}
-            description={dish.description}
             handleModal={handleModal}
             selectProduct={selectProduct}
             dish={dish}
@@ -55,9 +52,9 @@ const DishList = ({ dishes }: Props) => {
         <Container>
           <Product
             handleModal={handleModal}
-            image={product.image}
-            title={product.title}
-            description={product.description}
+            image={product.foto}
+            title={product.nome}
+            description={product.descricao}
           />
         </Container>
         <div className="overlay"></div>

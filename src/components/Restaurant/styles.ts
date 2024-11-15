@@ -11,6 +11,7 @@ export const RestaurantContainer = styled.li`
   img {
     display: block;
     width: 100%;
+    height: 217px;
   }
 
   .info {

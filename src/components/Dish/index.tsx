@@ -1,30 +1,28 @@
 import { Description, DishContainer, Title } from './styles'
 import Button from '../Button'
-import Item from '../../models/Item'
 
 export type Props = {
-  image: string
-  title: string
-  description: string
+  dish: Item
   onClick?: () => void
   handleModal: () => void
   selectProduct: (item: Item) => void
-  dish: Item
 }
 
-const Dish = ({
-  image,
-  title,
-  description,
-  dish,
-  handleModal,
-  selectProduct
-}: Props) => {
+export type Item = {
+  foto: string
+  preco?: number
+  id: number
+  nome: string
+  descricao: string
+  porcao?: string
+}
+
+const Dish = ({ dish, handleModal, selectProduct }: Props) => {
   return (
     <DishContainer>
-      <img src={image} alt={title} />
-      <Title>{title}</Title>
-      <Description>{description}</Description>
+      <img src={dish.foto} alt={dish.nome} />
+      <Title>{dish.nome}</Title>
+      <Description>{dish.descricao}</Description>
       <Button
         type="button"
         title="Clique para saber mais sobre este prato"
