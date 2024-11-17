@@ -1,3 +1,4 @@
+import { Item } from '../Dish'
 import { ButtonContainer, ButtonLink } from './styles'
 
 export type Props = {
@@ -8,6 +9,7 @@ export type Props = {
   children: string
   size?: 'small' | 'big'
   width: string
+  cardapio?: Item[]
 }
 
 const Button = ({

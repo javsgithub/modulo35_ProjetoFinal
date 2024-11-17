@@ -12,7 +12,8 @@ const Restaurant = ({
   avaliacao,
   descricao,
   destacado,
-  tipo
+  tipo,
+  cardapio
 }: Place) => {
   const returnPath = () => {
     if (id === 1) {
@@ -61,6 +62,7 @@ const Restaurant = ({
           title="Clique para ver as opções deste restaurante"
           width="82px"
           size="small"
+          cardapio={cardapio}
         >
           Saiba mais
         </Button>

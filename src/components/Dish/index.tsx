@@ -1,13 +1,6 @@
 import { Description, DishContainer, Title } from './styles'
 import Button from '../Button'
 
-export type Props = {
-  dish: Item
-  onClick?: () => void
-  handleModal: () => void
-  selectProduct: (item: Item) => void
-}
-
 export type Item = {
   foto: string
   preco?: number
@@ -15,22 +8,32 @@ export type Item = {
   nome: string
   descricao: string
   porcao?: string
+  onClick?: () => void
+  handleModal?: () => void
+  selectProduct?: (item: Item) => void
 }
 
-const Dish = ({ dish, handleModal, selectProduct }: Props) => {
+const Dish = ({ foto, nome, descricao, handleModal, selectProduct }: Item) => {
+  const handleProduct = (item: Item) => {
+    if (selectProduct) {
+      selectProduct(item)
+    }
+  }
   return (
     <DishContainer>
-      <img src={dish.foto} alt={dish.nome} />
-      <Title>{dish.nome}</Title>
-      <Description>{dish.descricao}</Description>
+      <img src={foto} alt={nome} />
+      <Title>{nome}</Title>
+      <Description>{descricao}</Description>
       <Button
         type="button"
         title="Clique para saber mais sobre este prato"
         size="big"
         width="304px"
         onClick={() => {
-          handleModal()
-          selectProduct(dish)
+          if (handleModal) {
+            handleModal()
+          }
+          handleProduct
         }}
       >
         Adicionar ao carrinho

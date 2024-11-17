@@ -1,9 +1,8 @@
 import { Dishes, Modal } from './styles'
-import Dish from '../Dish'
+import Dish, { Item } from '../Dish'
 
 import { Container } from '../../styles'
 
-import { Item } from '../Dish'
 import Product from '../Product'
 
 import { useState } from 'react'
@@ -39,9 +38,12 @@ const DishList = ({ dishes }: Props) => {
         {dishes.map((dish) => (
           <Dish
             key={dish.id}
+            id={dish.id}
+            foto={dish.foto}
+            nome={dish.nome}
+            descricao={dish.descricao}
             handleModal={handleModal}
             selectProduct={selectProduct}
-            dish={dish}
           />
         ))}
       </Dishes>
