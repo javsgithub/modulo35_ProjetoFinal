@@ -8,17 +8,17 @@ const Header = () => (
   <HeaderContainer>
     <Container>
       <HeaderBar>
-        <Link
-          style={{
-            fontSize: '18px',
-            fontWeight: '900',
-            textDecoration: 'none',
-            color: `${colors.pink3}`
-          }}
-          to="/"
-        >
-          <h3>Restaurantes</h3>
-        </Link>
+        <p className="title">
+          <Link
+            style={{
+              textDecoration: 'none',
+              color: `${colors.pink3}`
+            }}
+            to="/"
+          >
+            Restaurantes
+          </Link>
+        </p>
         <Logo src={logo} alt="Efood" />
         <b>
           <span>0</span>&nbsp;<span>produtos(s) no carrinho</span>

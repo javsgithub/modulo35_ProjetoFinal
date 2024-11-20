@@ -12,8 +12,7 @@ const Restaurant = ({
   avaliacao,
   descricao,
   destacado,
-  tipo,
-  cardapio
+  tipo
 }: Place) => {
   const returnPath = () => {
     if (id === 1) {
@@ -62,9 +61,8 @@ const Restaurant = ({
           title="Clique para ver as opções deste restaurante"
           width="82px"
           size="small"
-          cardapio={cardapio}
         >
-          Saiba mais
+          <>Saiba mais</>
         </Button>
       </div>
     </S.RestaurantContainer>

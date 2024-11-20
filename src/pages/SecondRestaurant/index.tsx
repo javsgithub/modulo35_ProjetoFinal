@@ -30,7 +30,7 @@ const SecondRestaurant = () => {
   return (
     <>
       <Header />
-      <Banner />
+      <Banner restaurant={restaurant} />
       <Container>
         <DishList dishes={restaurant.cardapio} />
       </Container>

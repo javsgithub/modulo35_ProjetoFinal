@@ -7,10 +7,25 @@ type Props = {
   image: string
   title: string
   description: string
+  porcao: string
+  preco: number
   handleModal: () => void
 }
 
-const Product = ({ image, title, description, handleModal }: Props) => {
+const Product = ({
+  image,
+  title,
+  description,
+  porcao,
+  preco,
+  handleModal
+}: Props) => {
+  const formataNumero = () => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(preco)
+  }
   return (
     <DishContainer>
       <img src={image} alt={title} />
@@ -22,7 +37,12 @@ const Product = ({ image, title, description, handleModal }: Props) => {
       />
       <div className="content">
         <Title>{title}</Title>
-        <Description>{description}</Description>
+        <Description>
+          {description}
+          <br />
+          <br />
+          Serve: de {porcao}
+        </Description>
         <Button
           type="link"
           to="/first-restaurant"
@@ -30,7 +50,7 @@ const Product = ({ image, title, description, handleModal }: Props) => {
           size="big"
           width="218px"
         >
-          Adicionar ao carrinho - R$ 60,00
+          <>Adicionar ao carrinho - {formataNumero()}</>
         </Button>
       </div>
     </DishContainer>

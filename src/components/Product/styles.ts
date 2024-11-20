@@ -8,7 +8,7 @@ export const DishContainer = styled.div`
   background-color: ${colors.pink3};
   padding: 32px;
   font-size: 14px;
-  color: ${colors.pink1};
+  color: ${colors.pink2};
   display: flex;
   position: absolute;
 
@@ -42,5 +42,5 @@ export const Description = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-  margin: 8px 0 8px;
+  margin: 8px 0 16px;
 `

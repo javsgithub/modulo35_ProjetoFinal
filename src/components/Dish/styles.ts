@@ -8,11 +8,13 @@ export const DishContainer = styled.li`
   background-color: ${colors.pink3};
   padding: 8px;
   font-size: 14px;
-  color: ${colors.pink1};
+  color: ${colors.pink2};
 
   img {
     display: block;
+    height: 167px;
     width: 100%;
+    object-fit: cover;
   }
 `
 export const Title = styled.h3`

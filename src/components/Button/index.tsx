@@ -1,4 +1,3 @@
-import { Item } from '../../pages/FirstRestaurant'
 import { ButtonContainer, ButtonLink } from './styles'
 
 export type Props = {
@@ -6,10 +5,9 @@ export type Props = {
   title: string
   to?: string
   onClick?: () => void
-  children: string
+  children: JSX.Element
   size?: 'small' | 'big'
   width: string
-  cardapio?: Item[]
 }
 
 const Button = ({

@@ -6,32 +6,41 @@ type Props = {
   foto: string
   nome: string
   descricao: string
+  preco?: number
+  item: Item
+  handleModal: () => void
+  selectDish: (item: Item) => void
 }
 
-const Dish = ({ foto, nome, descricao }: Props) => {
-  // const handleProduct = (item: Item) => {
-  //   if (selectProduct) {
-  //     selectProduct(item)
-  //   }
-  // }
+const Dish = ({
+  foto,
+  nome,
+  descricao,
+  item,
+  handleModal,
+  selectDish
+}: Props) => {
+  const textLimit = () =>
+    descricao.length > 145 ? `${descricao.slice(0, 145) + '...'}` : descricao
+
+  const handleDish = () => {
+    selectDish(item)
+    handleModal()
+  }
+
   return (
     <DishContainer>
       <img src={foto} alt={nome} />
       <Title>{nome}</Title>
-      <Description>{descricao}</Description>
+      <Description>{textLimit()}</Description>
       <Button
         type="button"
         title="Clique para saber mais sobre este prato"
         size="big"
         width="304px"
-        // onClick={() => {
-        //   if (handleModal) {
-        //     handleModal()
-        //   }
-        //   handleProduct
-        // }}
+        onClick={handleDish}
       >
-        Adicionar ao carrinho
+        <>Adicionar ao carrinho</>
       </Button>
     </DishContainer>
   )

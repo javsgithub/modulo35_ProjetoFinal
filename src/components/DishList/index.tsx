@@ -14,24 +14,28 @@ type Props = {
 
 const DishList = ({ dishes }: Props) => {
   const [isVisible, setIsVisible] = useState(false)
-  // const [product, setProduct] = useState<Item>({
-  //   foto: '',
-  //   nome: '',
-  //   descricao: '',
-  //   id: 0
-  // })
+  const [dish, setDish] = useState<Item>({
+    id: 0,
+    foto: '',
+    nome: '',
+    descricao: '',
+    porcao: '',
+    preco: 0
+  })
 
-  // const handleModal = () => {
-  //   isVisible === false ? setIsVisible(true) : setIsVisible(false)
-  // }
+  const handleModal = () => {
+    isVisible === false ? setIsVisible(true) : setIsVisible(false)
+  }
 
-  // const selectProduct = (item: Item) =>
-  //   setProduct({
-  //     foto: item.foto,
-  //     nome: item.nome,
-  //     descricao: item.descricao,
-  //     id: item.id
-  //   })
+  const selectDish = (item: Item) =>
+    setDish({
+      id: item.id,
+      foto: item.foto,
+      nome: item.nome,
+      descricao: item.descricao,
+      porcao: item.porcao,
+      preco: item.preco
+    })
 
   return (
     <>
@@ -42,8 +46,10 @@ const DishList = ({ dishes }: Props) => {
             foto={dish.foto}
             nome={dish.nome}
             descricao={dish.descricao}
-            // handleModal={handleModal}
-            // selectProduct={selectProduct}
+            preco={dish.preco as number}
+            item={dish}
+            handleModal={handleModal}
+            selectDish={selectDish}
           />
         ))}
       </Dishes>
@@ -52,12 +58,14 @@ const DishList = ({ dishes }: Props) => {
         onClick={() => setIsVisible(false)}
       >
         <Container>
-          {/* <Product
+          <Product
+            image={dish.foto}
+            title={dish.nome}
+            description={dish.descricao}
+            porcao={dish.porcao as string}
+            preco={dish.preco as number}
             handleModal={handleModal}
-            image={product.foto}
-            title={product.nome}
-            description={product.descricao}
-          /> */}
+          />
         </Container>
         <div className="overlay"></div>
       </Modal>

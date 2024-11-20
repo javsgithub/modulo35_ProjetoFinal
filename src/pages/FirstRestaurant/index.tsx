@@ -15,23 +15,11 @@ export type Item = {
   nome: string
   descricao: string
   porcao?: string
-  // onClick?: () => void
-  // handleModal?: () => void
-  // selectProduct?: (item: Item) => void
 }
 
 const FirstRestaurant = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Place>({
-    id: 0,
-    titulo: '',
-    destacado: false,
-    tipo: '',
-    avaliacao: 0,
-    descricao: '',
-    capa: '',
-    cardapio: []
-  })
+  const [restaurant, setRestaurant] = useState<Place>()
 
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
@@ -39,10 +27,14 @@ const FirstRestaurant = () => {
       .then((res) => setRestaurant(res))
   }, [id])
 
+  if (!restaurant) {
+    return <h3>Carregando...</h3>
+  }
+
   return (
     <>
       <Header />
-      <Banner />
+      <Banner restaurant={restaurant} />
       <Container>
         <DishList dishes={restaurant.cardapio} />
       </Container>

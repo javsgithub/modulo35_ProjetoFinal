@@ -1,12 +1,16 @@
-import bannerImg from '../../assets/images/banner_ItalianFood.png'
+import { Place } from '../../pages/Home'
 import { Container } from '../../styles'
 import { Category, Image, RestaurantName } from './styles'
 
-const Banner = () => (
-  <Image style={{ backgroundImage: `url(${bannerImg})` }}>
+type Props = {
+  restaurant: Place
+}
+
+const Banner = ({ restaurant }: Props) => (
+  <Image style={{ backgroundImage: `url(${restaurant.capa})` }}>
     <Container>
-      <Category>Italiana</Category>
-      <RestaurantName>La Dolce Vita Trattoria</RestaurantName>
+      <Category>{restaurant.tipo}</Category>
+      <RestaurantName>{restaurant.titulo}</RestaurantName>
     </Container>
   </Image>
 )

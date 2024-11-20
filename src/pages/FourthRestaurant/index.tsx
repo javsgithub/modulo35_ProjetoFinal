@@ -1,5 +1,4 @@
 import { Container } from '../../styles'
-import { Item } from '../FirstRestaurant'
 
 import DishList from '../../components/DishList'
 import Header from '../../components/RestaurantHeader'
@@ -31,7 +30,7 @@ const FourthRestaurant = () => {
   return (
     <>
       <Header />
-      <Banner />
+      <Banner restaurant={restaurant} />
       <Container>
         <DishList dishes={restaurant.cardapio} />
       </Container>

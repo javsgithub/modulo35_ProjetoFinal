@@ -15,9 +15,6 @@ export type Item = {
   nome: string
   descricao: string
   porcao?: string
-  // onClick?: () => void
-  // handleModal?: () => void
-  // selectProduct?: (item: Item) => void
 }
 
 const SixthRestaurant = () => {
@@ -42,7 +39,7 @@ const SixthRestaurant = () => {
   return (
     <>
       <Header />
-      <Banner />
+      <Banner restaurant={restaurant} />
       <Container>
         <DishList dishes={restaurant.cardapio} />
       </Container>
