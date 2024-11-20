@@ -3,7 +3,7 @@ import { Container } from '../../styles'
 import RestaurantList from '../../components/RestaurantList'
 import Footer from '../../components/Footer'
 import { useEffect, useState } from 'react'
-import { Item } from '../../components/Dish'
+import { Item } from '../FirstRestaurant'
 
 export type Place = {
   id: number

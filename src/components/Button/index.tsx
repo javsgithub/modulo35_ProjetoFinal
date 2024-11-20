@@ -1,4 +1,4 @@
-import { Item } from '../Dish'
+import { Item } from '../../pages/FirstRestaurant'
 import { ButtonContainer, ButtonLink } from './styles'
 
 export type Props = {

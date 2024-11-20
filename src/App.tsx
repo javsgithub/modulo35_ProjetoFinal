@@ -14,27 +14,27 @@ const routes = createBrowserRouter([
     element: <Home />
   },
   {
-    path: '/Bella_Tavola_Italiana',
+    path: '/Bella_Tavola_Italiana/:id',
     element: <FirstRestaurant />
   },
   {
-    path: '/Casa_das_Delícias_Árabe',
+    path: '/Casa_das_Delícias_Árabe/:id',
     element: <SecondRestaurant />
   },
   {
-    path: '/Sakura_Sushi_House',
+    path: '/Sakura_Sushi_House/:id',
     element: <ThirdRestaurant />
   },
   {
-    path: '/Cantinho_Lusitano',
+    path: '/Cantinho_Lusitano/:id',
     element: <FourthRestaurant />
   },
   {
-    path: '/Piazza_del_Fornot',
+    path: '/Piazza_del_Fornot/:id',
     element: <FifthRestaurant />
   },
   {
-    path: '/Jardim_da_Terra',
+    path: '/Jardim_da_Terra/:id',
     element: <SixthRestaurant />
   }
 ])

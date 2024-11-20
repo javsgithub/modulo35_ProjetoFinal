@@ -17,17 +17,17 @@ const Restaurant = ({
 }: Place) => {
   const returnPath = () => {
     if (id === 1) {
-      return '/Bella_Tavola_Italiana'
+      return `/Bella_Tavola_Italiana/${id}`
     } else if (id === 2) {
-      return '/Casa_das_Delícias_Árabe'
+      return `/Casa_das_Delícias_Árabe/${id}`
     } else if (id === 3) {
-      return '/Sakura_Sushi_House'
+      return `/Sakura_Sushi_House/${id}`
     } else if (id === 4) {
-      return '/Cantinho_Lusitano'
+      return `/Cantinho_Lusitano/${id}`
     } else if (id === 5) {
-      return '/Piazza_del_Fornot'
+      return `/Piazza_del_Fornot/${id}`
     } else {
-      return '/Jardim_da_Terra'
+      return `/Jardim_da_Terra/${id}`
     }
   }
 

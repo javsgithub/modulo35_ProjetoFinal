@@ -1,11 +1,12 @@
 import { Dishes, Modal } from './styles'
-import Dish, { Item } from '../Dish'
 
 import { Container } from '../../styles'
 
 import Product from '../Product'
 
 import { useState } from 'react'
+import { Item } from '../../pages/FirstRestaurant'
+import Dish from '../Dish'
 
 type Props = {
   dishes: Item[]
@@ -13,24 +14,24 @@ type Props = {
 
 const DishList = ({ dishes }: Props) => {
   const [isVisible, setIsVisible] = useState(false)
-  const [product, setProduct] = useState<Item>({
-    foto: '',
-    nome: '',
-    descricao: '',
-    id: 0
-  })
+  // const [product, setProduct] = useState<Item>({
+  //   foto: '',
+  //   nome: '',
+  //   descricao: '',
+  //   id: 0
+  // })
 
-  const handleModal = () => {
-    isVisible === false ? setIsVisible(true) : setIsVisible(false)
-  }
+  // const handleModal = () => {
+  //   isVisible === false ? setIsVisible(true) : setIsVisible(false)
+  // }
 
-  const selectProduct = (item: Item) =>
-    setProduct({
-      foto: item.foto,
-      nome: item.nome,
-      descricao: item.descricao,
-      id: item.id
-    })
+  // const selectProduct = (item: Item) =>
+  //   setProduct({
+  //     foto: item.foto,
+  //     nome: item.nome,
+  //     descricao: item.descricao,
+  //     id: item.id
+  //   })
 
   return (
     <>
@@ -38,12 +39,11 @@ const DishList = ({ dishes }: Props) => {
         {dishes.map((dish) => (
           <Dish
             key={dish.id}
-            id={dish.id}
             foto={dish.foto}
             nome={dish.nome}
             descricao={dish.descricao}
-            handleModal={handleModal}
-            selectProduct={selectProduct}
+            // handleModal={handleModal}
+            // selectProduct={selectProduct}
           />
         ))}
       </Dishes>
@@ -52,12 +52,12 @@ const DishList = ({ dishes }: Props) => {
         onClick={() => setIsVisible(false)}
       >
         <Container>
-          <Product
+          {/* <Product
             handleModal={handleModal}
             image={product.foto}
             title={product.nome}
             description={product.descricao}
-          />
+          /> */}
         </Container>
         <div className="overlay"></div>
       </Modal>
