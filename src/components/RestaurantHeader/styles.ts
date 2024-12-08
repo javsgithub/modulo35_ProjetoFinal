@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header`
     margin: 0 auto;
   }
 `
+
 export const HeaderBar = styled.div`
   width: 100%;
   display: flex;
@@ -22,8 +23,7 @@ export const HeaderBar = styled.div`
   font-weight: 900;
 
   b {
-    display: flex;
-    justify-content: space-between;
+    cursor: pointer;
   }
 `
 

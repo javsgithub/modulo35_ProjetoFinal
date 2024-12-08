@@ -65,6 +65,7 @@ const DishList = ({ dishes }: Props) => {
             porcao={dish.porcao as string}
             preco={dish.preco as number}
             handleModal={handleModal}
+            item={dish}
           />
         </Container>
         <div className="overlay"></div>
