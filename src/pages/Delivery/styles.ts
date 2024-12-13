@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 import lixeira from '../../assets/images/lixeira.png'
 
-export const Container = styled.div`
+export const DeliveryContainer = styled.div`
   height: 100%;
   width: 100%;
   position: fixed;

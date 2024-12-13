@@ -1,9 +1,12 @@
 import Button from '../Button'
-import { SideBar, CartContainer, Overlay, CartItem, Price } from './style'
+import { SideBar, Container, Overlay, CartItem, Price } from './style'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { close, exclude } from '../../store/reducers/cart'
 import { formataNumero } from '../Product'
+import Delivery from '../Delivery'
+import Payment from '../Payment'
+import Confirmation from '../Confirmation'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -24,7 +27,7 @@ const Cart = () => {
   }
 
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
+    <Container className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <SideBar>
         <ul>
@@ -52,7 +55,10 @@ const Cart = () => {
           <>Continuar com a entrega</>
         </Button>
       </SideBar>
-    </CartContainer>
+      <Payment />
+      <Delivery />
+      <Confirmation />
+    </Container>
   )
 }
 
