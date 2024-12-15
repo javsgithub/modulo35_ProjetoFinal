@@ -26,12 +26,24 @@ export const Overlay = styled.div`
   opacity: 0.7;
 `
 
-export const SideBar = styled.aside`
+export const SideBarStyles = styled.aside`
   height: 100%;
   width: 360px;
   padding: 32px 8px 0 8px;
   background: ${colors.pink3};
   z-index: 1;
+
+  h2 {
+    font-size: 16px;
+    fonte-weight: 700;
+    line-height: 19px;
+    color: ${colors.pink2};
+    margin-bottom: 16px;
+  }
+
+  &.invisible {
+    display: none;
+  }
 `
 
 export const CartItem = styled.li`

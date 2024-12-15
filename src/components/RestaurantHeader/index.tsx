@@ -29,7 +29,11 @@ const Header = () => {
             </Link>
           </p>
           <Logo src={logo} alt="Efood" />
-          <b onClick={openCart}>
+          <b
+            onClick={() => {
+              openCart()
+            }}
+          >
             <span>{items.length}</span>&nbsp;
             <span>produtos(s) no carrinho</span>
           </b>

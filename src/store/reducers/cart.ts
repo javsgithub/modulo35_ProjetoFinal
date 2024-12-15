@@ -4,11 +4,19 @@ import { Item } from '../../pages/FirstRestaurant'
 type CartState = {
   items: Item[]
   isOpen: boolean
+  cartSidebar: boolean
+  delivery: boolean
+  payment: boolean
+  confirmation: boolean
 }
 
 const initialState: CartState = {
   items: [],
-  isOpen: false
+  isOpen: false,
+  cartSidebar: true,
+  delivery: false,
+  payment: false,
+  confirmation: false
 }
 
 const cartSlice = createSlice({
@@ -32,9 +40,38 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    handlecartSidebar: (state) => {
+      if (state.cartSidebar === false) {
+        state.cartSidebar = true
+      } else state.cartSidebar = false
+    },
+    handleDelivery: (state) => {
+      if (state.delivery === false) {
+        state.delivery = true
+      } else state.delivery = false
+    },
+    handlePayment: (state) => {
+      if (state.payment === false) {
+        state.payment = true
+      } else state.payment = false
+    },
+    handleConfirmation: (state) => {
+      if (state.confirmation === false) {
+        state.confirmation = true
+      } else state.confirmation = false
     }
   }
 })
 
-export const { add, open, close, exclude } = cartSlice.actions
+export const {
+  add,
+  open,
+  close,
+  exclude,
+  handlecartSidebar,
+  handleDelivery,
+  handlePayment,
+  handleConfirmation
+} = cartSlice.actions
 export default cartSlice.reducer

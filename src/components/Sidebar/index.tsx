@@ -1,13 +1,15 @@
+import { SideBarStyles } from './styles'
+
 type Props = {
   tittle?: string
   children: JSX.Element
 }
 
 const Sidebar = ({ tittle, children }: Props) => (
-  <aside>
+  <SideBarStyles>
     <h2>{tittle}</h2>
     {children}
-  </aside>
+  </SideBarStyles>
 )
 
 export default Sidebar
