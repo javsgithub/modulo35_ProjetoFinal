@@ -1,5 +1,5 @@
 import Button from '../Button'
-import { Container, Overlay, CartItem, Price } from './style'
+import { Container, Overlay, CartItem, Price, EmptyCartMessage } from './style'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { close, exclude } from '../../store/reducers/cart'
@@ -8,7 +8,7 @@ import Delivery from '../Delivery'
 import Payment from '../Payment'
 import Confirmation from '../Confirmation'
 import { SideBarStyles } from './style'
-import { handlecartSidebar, handleDelivery } from '../../store/reducers/cart'
+import { handleCartSidebar, handleDelivery } from '../../store/reducers/cart'
 
 const Cart = () => {
   const { isOpen, items, cartSidebar, delivery, payment, confirmation } =
@@ -17,6 +17,7 @@ const Cart = () => {
 
   const closeCart = () => {
     dispatch(close())
+    dispatch(handleCartSidebar())
   }
 
   const showDeliveryComponent = () => {
@@ -24,7 +25,7 @@ const Cart = () => {
   }
 
   const hideCartSideBar = () => {
-    dispatch(handlecartSidebar())
+    dispatch(handleCartSidebar())
   }
 
   const removeItem = (id: number) => {
@@ -54,6 +55,9 @@ const Cart = () => {
               </CartItem>
             ))}
           </ul>
+          <EmptyCartMessage className={items.length === 0 ? 'visible' : ''}>
+            O seu carrinho está vazio.
+          </EmptyCartMessage>
           <Price>
             <span>Valor total</span>
             <span>{formataNumero(getTotalPrice())}</span>

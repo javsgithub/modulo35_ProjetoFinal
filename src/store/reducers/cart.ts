@@ -41,7 +41,7 @@ const cartSlice = createSlice({
     close: (state) => {
       state.isOpen = false
     },
-    handlecartSidebar: (state) => {
+    handleCartSidebar: (state) => {
       if (state.cartSidebar === false) {
         state.cartSidebar = true
       } else state.cartSidebar = false
@@ -60,6 +60,9 @@ const cartSlice = createSlice({
       if (state.confirmation === false) {
         state.confirmation = true
       } else state.confirmation = false
+    },
+    clearState: (state) => {
+      state.items = []
     }
   }
 })
@@ -69,9 +72,10 @@ export const {
   open,
   close,
   exclude,
-  handlecartSidebar,
+  handleCartSidebar,
   handleDelivery,
   handlePayment,
-  handleConfirmation
+  handleConfirmation,
+  clearState
 } = cartSlice.actions
 export default cartSlice.reducer

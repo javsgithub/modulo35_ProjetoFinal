@@ -86,6 +86,17 @@ export const CartItem = styled.li`
     background-color: transparent;
   }
 `
+export const EmptyCartMessage = styled.p`
+  color: ${colors.pink2};
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+`
 
 export const Price = styled.p`
   display: flex;

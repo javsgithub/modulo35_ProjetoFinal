@@ -5,7 +5,7 @@ import { Form, InputGroup, Row } from './styles'
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux'
 import {
-  handlecartSidebar,
+  handleCartSidebar,
   handlePayment,
   handleDelivery
 } from '../../store/reducers/cart'
@@ -14,7 +14,7 @@ const Delivery = () => {
   const dispatch = useDispatch()
 
   const backToCartSideBar = () => {
-    dispatch(handlecartSidebar())
+    dispatch(handleCartSidebar())
   }
 
   const hideDeliveryComponent = () => {
