@@ -4,7 +4,7 @@ import { colors, Container } from '../../styles'
 import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { open, handleCartSidebar } from '../../store/reducers/cart'
+import { open } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
 
 const Header = () => {

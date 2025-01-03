@@ -4,7 +4,7 @@ import Button from '../Button'
 import closeButton from '../../assets/images/close 1.png'
 import { Item } from '../../pages/FirstRestaurant'
 import { useDispatch } from 'react-redux'
-import { add, open, handleCartSidebar } from '../../store/reducers/cart'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
   item: Item
@@ -36,7 +36,7 @@ const Product = ({
 
   const addToCart = () => {
     dispatch(add(item))
-    dispatch(handleCartSidebar())
+    // dispatch(handleCartSidebar())
     dispatch(open())
   }
 

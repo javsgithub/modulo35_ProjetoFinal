@@ -8,15 +8,15 @@ export const SideBarStyles = styled.aside`
   background: ${colors.pink3};
   z-index: 1;
 
-  h2 {
-    font-size: 16px;
-    fonte-weight: 700;
-    line-height: 19px;
-    color: ${colors.pink2};
-    margin-bottom: 16px;
-  }
-
   &.is-closed {
     display: none;
   }
+`
+
+export const Tittle = styled.h2`
+  font-size: 16px;
+  fonte-weight: 700;
+  line-height: 19px;
+  color: ${colors.pink2};
+  margin-bottom: 16px;
 `

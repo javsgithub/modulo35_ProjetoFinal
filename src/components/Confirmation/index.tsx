@@ -2,14 +2,10 @@ import Button from '../Button'
 import Sidebar from '../Sidebar'
 import { ConfirmationMessage } from './styles'
 import { useDispatch } from 'react-redux'
-import { clearState, handleConfirmation } from '../../store/reducers/cart'
+import { clearState, closeConfirmation } from '../../store/reducers/cart'
 
 const Confirmation = () => {
   const dispatch = useDispatch()
-
-  const hideConfirmationComponent = () => {
-    dispatch(handleConfirmation())
-  }
 
   const clearCart = () => {
     dispatch(clearState())
@@ -40,7 +36,7 @@ const Confirmation = () => {
           size="big"
           width="344px"
           onClick={() => {
-            hideConfirmationComponent()
+            dispatch(closeConfirmation())
             clearCart()
           }}
         >

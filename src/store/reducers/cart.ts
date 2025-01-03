@@ -4,7 +4,7 @@ import { Item } from '../../pages/FirstRestaurant'
 type CartState = {
   items: Item[]
   isOpen: boolean
-  cartSidebar: boolean
+  visible: boolean
   delivery: boolean
   payment: boolean
   confirmation: boolean
@@ -13,8 +13,8 @@ type CartState = {
 const initialState: CartState = {
   items: [],
   isOpen: false,
-  cartSidebar: true,
-  delivery: false,
+  visible: true,
+  delivery: true,
   payment: false,
   confirmation: false
 }
@@ -41,25 +41,29 @@ const cartSlice = createSlice({
     close: (state) => {
       state.isOpen = false
     },
-    handleCartSidebar: (state) => {
-      if (state.cartSidebar === false) {
-        state.cartSidebar = true
-      } else state.cartSidebar = false
+    show: (state) => {
+      state.visible = true
     },
-    handleDelivery: (state) => {
-      if (state.delivery === false) {
-        state.delivery = true
-      } else state.delivery = false
+    hide: (state) => {
+      state.visible = false
     },
-    handlePayment: (state) => {
-      if (state.payment === false) {
-        state.payment = true
-      } else state.payment = false
+    openDelivery: (state) => {
+      state.delivery = true
     },
-    handleConfirmation: (state) => {
-      if (state.confirmation === false) {
-        state.confirmation = true
-      } else state.confirmation = false
+    closeDelivery: (state) => {
+      state.delivery = false
+    },
+    openPayment: (state) => {
+      state.payment = true
+    },
+    closePayment: (state) => {
+      state.payment = false
+    },
+    openConfirmation: (state) => {
+      state.confirmation = true
+    },
+    closeConfirmation: (state) => {
+      state.confirmation = false
     },
     clearState: (state) => {
       state.items = []
@@ -71,11 +75,15 @@ export const {
   add,
   open,
   close,
+  show,
+  hide,
   exclude,
-  handleCartSidebar,
-  handleDelivery,
-  handlePayment,
-  handleConfirmation,
+  openDelivery,
+  closeDelivery,
+  openPayment,
+  closePayment,
+  openConfirmation,
+  closeConfirmation,
   clearState
 } = cartSlice.actions
 export default cartSlice.reducer

@@ -2,30 +2,22 @@ import Button from '../Button'
 import { Container, Overlay, CartItem, Price, EmptyCartMessage } from './style'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { close, exclude } from '../../store/reducers/cart'
+import { close, exclude, openDelivery, show } from '../../store/reducers/cart'
 import { formataNumero } from '../Product'
-import Delivery from '../Delivery'
-import Payment from '../Payment'
-import Confirmation from '../Confirmation'
 import { SideBarStyles } from './style'
-import { handleCartSidebar, handleDelivery } from '../../store/reducers/cart'
-
+import { useNavigate } from 'react-router-dom'
 const Cart = () => {
-  const { isOpen, items, cartSidebar, delivery, payment, confirmation } =
-    useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
+  const goToCheckout = () => {
+    navigate('/checkout')
+  }
 
   const closeCart = () => {
     dispatch(close())
-    dispatch(handleCartSidebar())
-  }
-
-  const showDeliveryComponent = () => {
-    dispatch(handleDelivery())
-  }
-
-  const hideCartSideBar = () => {
-    dispatch(handleCartSidebar())
   }
 
   const removeItem = (id: number) => {
@@ -34,14 +26,17 @@ const Cart = () => {
 
   const getTotalPrice = () => {
     return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco!)
+      if (valorAtual.preco) {
+        return (acumulador += valorAtual.preco)
+      }
+      return 0
     }, 0)
   }
 
   return (
     <Container className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
-      <SideBarStyles className={cartSidebar ? '' : 'invisible'}>
+      <SideBarStyles>
         <>
           <ul>
             {items.map((item) => (
@@ -68,17 +63,16 @@ const Cart = () => {
             size="big"
             width="344px"
             onClick={() => {
-              hideCartSideBar()
-              showDeliveryComponent()
+              goToCheckout()
+              dispatch(close())
+              dispatch(openDelivery())
+              dispatch(show())
             }}
           >
             <>Continuar com a entrega</>
           </Button>
         </>
       </SideBarStyles>
-      {delivery && <Delivery />}
-      {payment && <Payment />}
-      {confirmation && <Confirmation />}
     </Container>
   )
 }

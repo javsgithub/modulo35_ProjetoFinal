@@ -1,4 +1,4 @@
-import { SideBarStyles } from './styles'
+import { SideBarStyles, Tittle } from './styles'
 
 type Props = {
   tittle?: string
@@ -6,10 +6,12 @@ type Props = {
 }
 
 const Sidebar = ({ tittle, children }: Props) => (
-  <SideBarStyles>
-    <h2>{tittle}</h2>
-    {children}
-  </SideBarStyles>
+  <>
+    <SideBarStyles>
+      <Tittle>{tittle}</Tittle>
+      {children}
+    </SideBarStyles>
+  </>
 )
 
 export default Sidebar
