@@ -148,9 +148,9 @@ const Checkout = () => {
     return containError
   }
 
-  if (items.length === 0) {
-    return <Navigate to="/" />
-  }
+  // if (items.length === 0) {
+  //   return <Navigate to="/" />
+  // }
 
   return (
     <>
