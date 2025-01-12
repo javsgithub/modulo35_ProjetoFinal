@@ -1,21 +1,44 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 
-export const Container = styled.div`
+export const Content = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 70px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    color: ${colors.pink3};
+    margin-bottom: 16px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+`
+
+export const Container = styled.form`
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   right: 0;
-  display: none;
+  display: flex;
   justify-content: flex-end;
 
   form {
     z-index: 1;
   }
 
-  &.show {
-    display: flex;
+  &.hide {
+    display: none;
   }
 `
 
@@ -28,10 +51,6 @@ export const Overlay = styled.div`
   background-color: #000;
   opacity: 0.7;
 `
-
-// export const Form = styled.form`
-//   z-index: 1;
-// `
 
 export const ButtonContainer = styled.div`
   display: flex;

@@ -6,12 +6,10 @@ type Props = {
 }
 
 const Sidebar = ({ tittle, children }: Props) => (
-  <>
-    <SideBarStyles>
-      <Tittle>{tittle}</Tittle>
-      {children}
-    </SideBarStyles>
-  </>
+  <SideBarStyles>
+    <Tittle>{tittle}</Tittle>
+    {children}
+  </SideBarStyles>
 )
 
 export default Sidebar
