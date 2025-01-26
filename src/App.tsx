@@ -11,9 +11,9 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { BrowserRouter } from 'react-router-dom'
 import Cart from './components/Cart'
-import Checkout from './pages/Checkout'
+import Checkout from './components/Checkout'
 
-const Rotas = () => (
+const RoutesComponent = () => (
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/Bella_Tavola_Italiana/:id" element={<FirstRestaurant />} />
@@ -22,7 +22,6 @@ const Rotas = () => (
     <Route path="/Cantinho_Lusitano/:id" element={<FourthRestaurant />} />
     <Route path="/Piazza_del_Fornot/:id" element={<FifthRestaurant />} />
     <Route path="/Jardim_da_Terra/:id" element={<SixthRestaurant />} />
-    <Route path="/checkout" element={<Checkout />} />
   </Routes>
 )
 
@@ -31,8 +30,9 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <GlobalCss />
-        <Rotas />
+        <RoutesComponent />
         <Cart />
+        <Checkout />
       </BrowserRouter>
     </Provider>
   )

@@ -35,9 +35,9 @@ const Product = ({
   const dispatch = useDispatch()
 
   const addToCart = () => {
-    dispatch(add(item))
-    // dispatch(handleCartSidebar())
     dispatch(open())
+    dispatch(add(item))
+    handleModal()
   }
 
   return (

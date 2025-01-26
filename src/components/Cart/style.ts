@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 import lixeira from '../../assets/images/lixeira.png'
 
-export const Container = styled.div`
+export const CartContainer = styled.div`
   height: 100%;
   width: 100%;
   position: fixed;
@@ -26,7 +26,7 @@ export const Overlay = styled.div`
   opacity: 0.7;
 `
 
-export const SideBarStyles = styled.aside`
+export const CartSidebar = styled.aside`
   height: 100%;
   width: 360px;
   padding: 32px 8px 0 8px;
@@ -91,10 +91,6 @@ export const EmptyCartMessage = styled.p`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  display: none;
-
-  &.visible {
-    display: block;
   }
 `
 
@@ -108,13 +104,7 @@ export const Price = styled.p`
   margin: 40px 0 16px;
 `
 
-export const Form = styled.form`
-  z-index: 1;
-  .button-spaces {
-  }
-`
-
-export const ButtonContainer = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 8px;
@@ -128,14 +118,18 @@ export const InputGroup = styled.div`
     line-height: 16px;
     color: ${colors.pink2};
   }
+
   input {
     height: 32px;
     width: 100%;
-    // color: #000;
     background-color: ${colors.pink2};
     border: 1px solid ${colors.pink2};
     padding: 0 8px;
     margin: 8px 0;
+
+    &.error {
+      border: 1px solid red;
+    }
   }
 `
 

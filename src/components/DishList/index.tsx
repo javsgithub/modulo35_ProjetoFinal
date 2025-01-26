@@ -7,6 +7,7 @@ import Product from '../Product'
 import { useState } from 'react'
 import { Item } from '../../pages/FirstRestaurant'
 import Dish from '../Dish'
+import Cart from '../Cart'
 
 type Props = {
   dishes: Item[]
@@ -70,6 +71,7 @@ const DishList = ({ dishes }: Props) => {
         </Container>
         <div className="overlay"></div>
       </Modal>
+      <Cart />
     </>
   )
 }
